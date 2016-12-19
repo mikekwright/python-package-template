@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# vim: filetype=sh:
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+cd $DIR
+cd ..
+
+#twine upload -r pypi-internal dist/*
+python setup.py sdist upload -r pypi-internal
+python setup.py bdist_wheel upload -r pypi-internal
+
