@@ -13,7 +13,7 @@ URL=$2
 DESC=$3
 
 sed -i -e "s/{{APP_NAME}}/$APP_NAME/g" setup.py
-sed -i -e "s/{{URL}}/$URL/g" setup.py
+sed -i -e "s#{{URL}}#$URL#g" setup.py
 sed -i -e "s/{{SHORT_DESCRIPTION}}/$1/g" setup.py
 rm setup.py-e
 
