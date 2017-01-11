@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # vim: filetype=sh:
 
-cd "$(dirname $0)"; cd ..;
+cd "$(dirname $0)"; cd ../..;
 
 if [[ "$#" -ne "3" ]]; then
   echo "Usage: $0 <app_name> <url> <description>"
@@ -20,4 +20,9 @@ rm setup.py-e
 sed -i -e "s/{{APP_NAME}}/$APP_NAME/g" README.rst
 rm README.rst-e
 
+sed -i -e "s/{{APP_NAME}}/$APP_NAME/g" bin/activate_docker
+rm bin/activate_docker-e
+
+cd "$(dirname $0)"; cd ..;
+rm -rf template
 

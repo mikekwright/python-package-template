@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# vim :set filetype=sh:
+
+DOCKERFILE=dev.Dockerfile
+IMAGE_NAME={{APP_NAME}}
+
+build_dev() {
+  cd "$(dirname $0)"; cd ..;
+  docker build -t $IMAGE_NAME . -f docker/$DOCKERFILE
+}
+
+run_dev() {
+  if ! docker images | grep $IMAGE_NAME >> /dev/null; then
+    build_dev
+  fi
+  docker run -it $IMAGE_NAME $@
+}
+
+alias python="run_dev"
+alias rebuild="build_dev"
+
