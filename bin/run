@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# vim: filetype=sh:
+
+IMAGE_NAME=${IMAGE_NAME:-{{APP_NAME}}}
+
+docker run -it --rm $IMAGE_NAME
+

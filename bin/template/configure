@@ -23,6 +23,12 @@ rm README.rst-e
 sed -i -e "s/{{APP_NAME}}/$APP_NAME/g" bin/activate_docker
 rm bin/activate_docker-e
 
+sed -i -e "s/{{APP_NAME}}/$APP_NAME/g" bin/build
+rm bin/build-e
+
+sed -i -e "s/{{APP_NAME}}/$APP_NAME/g" bin/run
+rm bin/run-e
+
 cd "$(dirname $0)"; cd ..;
 rm -rf template
 
