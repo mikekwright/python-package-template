@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+# vim: filetype=sh:
+
+BUILD_NUMBER=${BUILD_NUMBER:-0}
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+cd $DIR
+cd ..
+
+version=$(cat VERSION)
+#PATCH_VERSION=$(date +'%Y%m%d%H%M%S')
+
+update_version="${version%.*}.$BUILD_NUMBER"
+
+echo -e "Updating build version to $update_version"
+echo -e "$update_version" > VERSION
+
+#git add VERSION
+#git commit -m "Updated build version"
+#git tag "build-$update_version"
+#git push --tags
+
+
