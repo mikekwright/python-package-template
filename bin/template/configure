@@ -17,8 +17,8 @@ sed -i -e "s#{{URL}}#$URL#g" setup.py
 sed -i -e "s/{{SHORT_DESCRIPTION}}/$1/g" setup.py
 rm setup.py-e
 
-sed -i -e "s/{{APP_NAME}}/$APP_NAME/g" README.rst
-rm README.rst-e
+sed -i -e "s/{{APP_NAME}}/$APP_NAME/g" README.md
+rm README.md-e
 
 sed -i -e "s/{{APP_NAME}}/$APP_NAME/g" bin/activate_docker
 rm bin/activate_docker-e
